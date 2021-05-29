@@ -5,11 +5,17 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
+const { Mongoose } = require('mongoose');
 
 //Inicializaciones
 const app = express();
 require('./database');
 require('./config/passport');
+
+//Conexiones Servidor
+mongoose.connect('mongodb+srv://a-la-mesa.0omuj.mongodb.net/myFirstDatabase')
+    .then(db => console.log('Base de datos conectada'))
+    .catch(err => console.log(err));
 
 //Ajustes
 app.set('port', process.env.PORT || 3000);
