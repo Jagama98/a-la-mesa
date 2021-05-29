@@ -1,0 +1,29 @@
+<div class="col-md-4 mx-auto">
+<div class="card text-center">
+    <a href="/pedidos/pedirPlato" class="btn btn-primary btn-lg mr-3 animate-up mb-xs-4">
+    Añadir otro plato
+    </a>
+</div>
+</div>
+<div class="row">
+    {{#each platos}}
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title d-flex justify-content-between align-items-center">
+                        {{restaurante}} <a href="/pedidos/edit/{{_id}}"><i class="fas fa-edit"></i></a>    
+                    </h3>
+                    <h2 class="card-title">
+                        {{plato}}     
+                    </h2>
+                    <p>Cantidad: {{cantidad}}</p>
+                    <form action="/pedidos/delete/{{_id}}?_method=DELETE" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button class="btn btn-danger btn-block btn-sm" type="submit">Eliminar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</div>
+

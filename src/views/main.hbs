@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="">
+  <meta name="description"
+    content="Creative Agency is a one page responsive Bootstrap 4 template. This is a free open source theme, you can use our theme for any purpose, even commercially. Create amazing websites with this easy to customize template.">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../assets/css/styles.css">
+
+  <!-- Google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700|Sulphur+Point:700&display=swap" rel="stylesheet">
+
+  <title>A la mesa</title>
+
+  <link rel="shortcut icon" href="../assets/images/mini.png">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container">
+      <a class="navbar-brand text-dark font-weight-bold" href="/"><img class="logo"
+          src="../assets/images/logo.PNG"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <img src="../assets/images/menu.png" class="img-fluid" style="height: 30px;">
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ml-4">
+            <a class="nav-link text-dark" href="/">Inicio</a>
+          </li>
+          <li class="nav-item ml-4">
+            <a class="nav-link text-dark" href="/restaurantes">Restaurantes</a>
+          </li>
+          <li class="nav-item ml-4">
+            <a class="nav-link text-dark" href="/mapa">Mapa interactivo</a>
+          </li>
+          <li class="nav-item ml-4 dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Pedidos
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/pedidos">Mis pedidos</a>
+              <a class="dropdown-item" href="/pedidos/pedirPlato">Añadir pedido</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/users/logout">Cerrar sesión</a>
+            </div>
+          </li>
+          <li class="nav-item ml-4">
+            <a class="nav-link btn btn-primary" href="/users/signin">Iniciar sesión</a>
+          </li>
+          <li class="nav-item ml-4">
+            <a class="nav-link btn btn-primary" href="/users/signup">Registrarse</a>
+          </li>
+        </ul>
+      </div>
+      </div>
+    </div>
+  </nav>
+{{> mensajes }}
+{{> errors }}
+{{{body}}}
+
+  <footer class="bg-primary py-6">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h4 class="text-dark mb-3">Colaboraciones</h4>
+          <ul class="list-unstyled text-dark">
+            <li class="mb-2"><a
+                href="https://www.microsoft.com/es-es/p/paint-3d/9nblggh5fv99?activetab=pivot:overviewtab">Paint</a>
+            </li>
+            <li class="mb-2"><a href="https://www.w3schools.com/">W3School</a></li>
+            <li><a href="https://www.ecija.es/">Ayuntamiento de Écija</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h4 class="text-dark mb-3">Compañía</h4>
+          <ul class="list-unstyled text-dark">
+            <li class="mb-2"><a href="">DAW 2</a></li>
+            <li class="mb-2"><a href="">Soporte</a></li>
+            <li class="mb-2"><a href="">Eventos</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h4 class="text-dark mb-3">Explora</h4>
+          <ul class="list-unstyled text-dark">
+            <li class="mb-2"><a href="/mapa">Mapa de Écija</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h4 class="text-dark mb-3">Redes Sociales</h4>
+          <ul class="list-inline">
+            <li class="list-inline-item mr-4"><a href="https://www.facebook.com/"><img
+                  src="../assets/images/facebook.svg" class="img-fluid" alt="Logo Facebook"></a></li>
+            <li class="list-inline-item mr-4"><a href="https://www.instagram.com/"><img
+                  src="../assets/images/instagram.svg" class="img-fluid" alt="Logo Instagram"></a></li>
+            <li class="list-inline-item"><a href="https://www.youtube.com/"><img
+                  src="../assets/images/youtube.svg" class="img-fluid" alt="Logo Youtube"></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-md-6">
+          <small class="text-dark">A la mesa 2021. Todos los derechos reservados</small>
+        </div>
+        <div class="col-md-6 text-right">
+          <small class="text-dark">Términos y condiciones</small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="../assets/js/popper.min.js"></script>
+  <script src="https://kit.fontawesome.com/c6bff1bf2b.js" crossorigin="anonymous"></script>
+  <script src="../assets/js/jquery.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+
+</html>

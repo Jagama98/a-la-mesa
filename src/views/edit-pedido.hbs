@@ -1,0 +1,40 @@
+<div class="col-md-4 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <h3>Editar plato</h3>
+        </div>
+        <div class="card-body">
+            <form action="/pedidos/edit-pedido/{{plato._id}}?_method=PUT" method="POST">
+                <input type="hidden" name="_method" value="PUT">
+                <div class="form-group">
+                    <select name="plato" class="custom-select" data-live-search="true">
+                    <optgroup label="Agora">
+                        <option value="Patatas Bravas">Patatas Bravas</option>
+                        <option value="Burguer Corcega">Burguer Corcega</option>
+                        <option value="Burrito Carrillada">Burrito Carrillada</option>
+                    </optgroup>
+                    <optgroup label="Machín">
+                        <option value="Ensaladilla">Ensaladilla</option>
+                        <option value="Solomillo Jerez">Solomillo Jerez</option>
+                        <option value="Serranito Pollo">Serranito Pollo</option>
+                    </optgroup>
+                    <optgroup label="Canarias">
+                        <option value="Chipirón Plancha">Chipirón Plancha</option>
+                        <option value="Lagrimitas Pollo">Lagrimitas Pollo</option>
+                        <option value="Presa Ibérica">Presa Ibérica</option>
+                    </optgroup>
+                    </select>
+                    <!--<input type="text" name="plato" class="form-control" placeholder="Plato"
+                    value="{{plato.plato}}">-->
+                </div>
+                <div class="form-group">
+                    <input type="text" name="cantidad" class="form-control" placeholder="Cantidad"
+                    value="{{plato.cantidad}}">
+                </div>
+                <div class="form-group">
+                   <button class="btn btn-primary btn-block" type="submit">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
