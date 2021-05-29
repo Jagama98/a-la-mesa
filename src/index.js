@@ -12,11 +12,6 @@ const app = express();
 require('./database');
 require('./config/passport');
 
-//Conexiones Servidor
-mongoose.connect('mongodb://jagama:abc123xyz@a-la-mesa.0omuj.mongodb.net/a-la-mesa')
-    .then(db => console.log('Base de datos conectada'))
-    .catch(err => console.log(err));
-
 //Ajustes
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));

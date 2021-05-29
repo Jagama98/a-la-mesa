@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/alamesa-db-app', {
+mongoose.connect('mongodb+srv://jagama:abc123xyz@a-la-mesa.0omuj.mongodb.net/a-la-mesa?retryWrites=true&w=majority', {
     useCreateIndex: true,
     useNewUrlParser: true,
     useFindAndModify: false
