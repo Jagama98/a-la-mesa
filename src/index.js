@@ -13,7 +13,7 @@ require('./database');
 require('./config/passport');
 
 //Conexiones Servidor
-mongoose.connect('mongodb+srv://a-la-mesa.0omuj.mongodb.net/myFirstDatabase')
+mongoose.connect('mongodb+srv://a-la-mesa.0omuj.mongodb.net/a-la-mesa')
     .then(db => console.log('Base de datos conectada'))
     .catch(err => console.log(err));
 
