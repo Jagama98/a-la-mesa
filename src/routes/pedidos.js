@@ -12,19 +12,19 @@ router.post('/pedidos/pedirPlato', isAuthenticated, async (req, res) => {
     const { restaurante, plato, cantidad, direccion, telefono }= req.body;
     const errors = [];
     if(!restaurante) {
-        errors.push({text: 'Por favor elija un restaurante'});
+        errors.push({error: 'Por favor elija un restaurante'});
     }
     if(!plato) {
-        errors.push({text: 'Por favor escriba el nombre de un plato'});
+        errors.push({error: 'Por favor escriba el nombre de un plato'});
     }
     if(!cantidad) {
-        errors.push({text: 'Por favor indique una cantidad'});
+        errors.push({error: 'Por favor indique una cantidad'});
     }
     if(!direccion) {
-        errors.push({text: 'Por favor indique una dirección'});
+        errors.push({error: 'Por favor indique una dirección'});
     }
     if(!telefono) {
-        errors.push({text: 'Por favor indique un número de teléfono'});
+        errors.push({error: 'Por favor indique un número de teléfono'});
     }
     if(errors.length > 0) {
         res.render('pedirPlato', {
