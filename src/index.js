@@ -20,7 +20,7 @@ app.engine('.hbs', exphbs({
     defaultLayout: path.join(app.get('views') , 'main.hbs'),
     partialsDir: path.join(app.get('views') , 'partials'),
     extname: '.hbs'
-}));
+}))
 app.set('view engine', '.hbs');
 
 //Middlewares
