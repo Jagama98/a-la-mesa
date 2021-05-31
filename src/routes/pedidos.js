@@ -38,7 +38,7 @@ router.post('/pedidos/pedirPlato', isAuthenticated, async (req, res) => {
 });
 
 router.get('/pedidos', isAuthenticated, async (req, res) => {
-    const platos = await Plato.find().lean();
+    const platos = await Plato.find({user: req.user.id}).lean();
     res.render('all-pedidos', { platos });
 });
 

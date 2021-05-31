@@ -7,7 +7,8 @@ const PlatoSchema = new Schema({
     cantidad: { type: Number, required: true},
     direccion: { type: String, required: true},
     telefono: { type: Number, required: true},
-    date: { type: Date, default: Date.now}
+    date: { type: Date, default: Date.now},
+    user: { type: String}
 });
 
 module.exports = mongoose.model('Plato', PlatoSchema);
