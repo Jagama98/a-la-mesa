@@ -1,12 +1,3 @@
-{{#each text}}
-<div class="alert alert-danger alert-dismissible fade show" role="alert">
-  {{text}}
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-{{/each}}
-
 <div class="row">
     <div class="col-md-4 mx-auto">
         <div class="card">
@@ -16,7 +7,7 @@
             <div class="card-body">
                 <form action="/users/signup" method="POST">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="name" placeholder="Nombre" value="{{name}}">
+                        <input type="text" class="form-control" name="name" placeholder="Nombre" value="{{name}}" autofocus>
                     </div>
                     <div class="form-group">
                         <input type="email" class="form-control" name="email" placeholder="Email" value="{{email}}">

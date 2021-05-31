@@ -21,25 +21,26 @@ router.get('/users/signup', (req, res) => {
 
 router.post('/users/signup', async (req, res) => {
     const { name, email, password, confirm_password } = req.body;
-    const errors = [];
     if(name.length <= 0){
-        errors.push({text: 'Introduzca un nombre'});
+        req.flash('error_msg', 'Introduzca un nombre');
+        res.redirect('/users/signup');
     }
     if(email.length <= 0){
-        errors.push({text: 'Introduzca un email'});
+        req.flash('error_msg', 'Introduzca un email');
+        res.redirect('/users/signup');
     }
     if(password.length <= 0){
-        errors.push({text: 'Introduzca una contraseña'});
+        req.flash('error_msg', 'Introduzca una contraseña');
+        res.redirect('/users/signup');
     }
     if(password != confirm_password) {
-        errors.push({text: 'Las contraseñas no coinciden'});
+        req.flash('error_msg', 'Las contraseñas no coinciden');
+        res.redirect('/users/signup');
     }
     if(password.length < 4){
-        errors.push({text: 'La contraseña debe tener mínimo 4 caracteres'});
-    }
-    if(errors.length > 0){
-       res.render('users/signup', {errors, name, email, password, confirm_password});
-    }else{
+        req.flash('error_msg', 'La contraseña debe tener mínimo 4 caracteres');
+        res.redirect('/users/signup');
+    } else{
         const emailUser = await User.findOne({email: email});
         if(emailUser) {
             req.flash('error_msg', 'Email ya registrado');

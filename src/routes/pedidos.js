@@ -10,37 +10,30 @@ router.get('/pedidos/pedirPlato', isAuthenticated, (req, res) => {
 
 router.post('/pedidos/pedirPlato', isAuthenticated, async (req, res) => {
     const { restaurante, plato, cantidad, direccion, telefono }= req.body;
-    const errors = [];
     if(!restaurante) {
-        errors.push({text: 'Por favor elija un restaurante'});
+        req.flash('error_msg', 'Por favor elija un restaurante');
+        res.redirect('/pedidos/pedirPlato');
     }
     if(!plato) {
-        errors.push({text: 'Por favor escriba el nombre de un plato'});
+        req.flash('error_msg', 'Por favor elija un plato');
+        res.redirect('/pedidos/pedirPlato');
     }
     if(!cantidad) {
-        errors.push({text: 'Por favor indique una cantidad'});
+        req.flash('error_msg', 'Por favor indique una cantidad');
+        res.redirect('/pedidos/pedirPlato');
     }
     if(!direccion) {
-        errors.push({text: 'Por favor indique una dirección'});
+        req.flash('error_msg', 'Por favor indique una dirección');
+        res.redirect('/pedidos/pedirPlato');
     }
     if(!telefono) {
-        errors.push({text: 'Por favor indique un número de teléfono'});
-    }
-    if(errors.length > 0) {
-        res.render('pedirPlato', {
-            errors,
-            restaurante,
-            plato,
-            cantidad,
-            direccion,
-            telefono
-        });
+        req.flash('error_msg', 'Por favor indique un número de teléfono');
+        res.redirect('/pedidos/pedirPlato');
     } else {
         const newPlato = new Plato({ restaurante, plato, cantidad, direccion, telefono });
         await newPlato.save();
         req.flash('success_msg', 'Pedido añadido correctamente');
-        res.redirect('/pedidos');
-        
+        res.redirect('/pedidos');    
     }
 });
 
