@@ -31,6 +31,7 @@ router.post('/pedidos/pedirPlato', isAuthenticated, async (req, res) => {
         res.redirect('/pedidos/pedirPlato');
     } else {
         const newPlato = new Plato({ restaurante, plato, cantidad, direccion, telefono });
+        newPlato.user = req.user.id;
         await newPlato.save();
         req.flash('success_msg', 'Pedido añadido correctamente');
         res.redirect('/pedidos');    
